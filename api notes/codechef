@@ -1,0 +1,51 @@
+No Official Public API
+Maybe Beautiful Soup needs to be used or finding way using developer tools
+
+# https://www.codechef.com/api/
+{
+    "status":
+    
+}
+
+# /problems/tags? start_rating=(int from 0) & end_rating=(int upto 5000)
+{
+    "data":[{
+        "tagSlug":
+        "tagName":
+        "problemCount":
+    }]
+}
+
+# /list/problems?  page=0  &  limit=20  &  sort_by=difficulty_rating  &  sort_order=asc  &  search=  &  category=rated  &  start_rating=0  &  end_rating=5000  &  topic=  &  tags=  &  group=all
+{
+    "data":[{
+        "id":
+        "code":
+        "name":
+        "difficulty_rating":
+        "total_submissions":
+        "successful_submissions":
+        "distinct_successful_submissions":
+        "partially_successful_submissions":
+        "intended_contest_id":
+        "actual_intended_contests": []
+        "contest_code":
+    }]
+}
+
+# /list/contests/all?  sort_by=START  &  sorting_order=asc  &  offset=0  &  mode=premium
+{
+    "future_contests": [{
+        "contest_code": 
+        "contest_name": 
+        "contest_start_date": 
+        "contest_end_date": 
+        "contest_start_date_iso": 
+        "contest_end_date_iso": 
+        "contest_duration": 
+        "distinct_users": 
+    }]
+    "present_contests": 
+    "practice_contests":
+    "past_contests":
+}
