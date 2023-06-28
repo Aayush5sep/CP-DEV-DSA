@@ -1,0 +1,74 @@
+Official Public API Available
+# https://codeforces.com/api/{methodName}
+    {   
+        status:"OK"/"FAILED",
+        result:[]/{}
+    }
+
+# contest.list
+    [{
+        id    name    type        phase
+        PK    NAME    CF, ICPC    BEFORE, CODING, PENDING_SYSTEM_TEST, SYSTEM_TEST, FINISHED
+
+        frozen    durationSeconds  startTimeSeconds  relativeTimeSeconds
+        BOOLEAN   DURATION(int)    UNIX TIME(int)    RELATIVE TIME(int)
+    },]
+
+# contest.ratingChanges?contestId={int}
+    [{
+        contestId  contestName  handle   rank        ratingUpdateTimeSeconds  oldRating  newRating
+        PK         NAME         USER     RANK(int)   UNIX TIME(int)           RATINGS(int)
+    },]
+
+# contest.standings?contestId={int} &from=(int) &count=(int) &handles=();()
+    {
+        "contest":{},
+        "problems":[{}],
+        "rows":[{
+            rank  points  penalty  successfulHackCount  unsuccessfulHackCount
+            RANK  POINTS  (int)    (int)                (int)
+
+            "party":{"members":[{"handle":(str)}]}
+            "problemResults":[{ points  type  rejectedAttemptCount }]
+        }]
+    }
+
+# problemset.problems ?tags=(str)
+    {
+        "problems":[{
+            contestId  index  name  type  tags:[]
+        }]
+        "problemStatistics":[{
+            contestId  index  solvedCount
+        }]
+    }
+
+# problemset.recentStatus?count={int}
+    [{
+        id  contestId  creationTimeSeconds  relativeTimeSeconds  programmingLanguage  verdict  testset
+
+        passedTestCount  timeConsumedMillis  memoryConsumedBytes  problem  author
+    }]
+
+# user.info?handles={str};{str}
+    [{
+        handle  firstName  lastName  rating  maxRating  rank  maxRank  titlePhoto  avatar  
+
+        friendOfCount  lastOnlineTimeSeconds  registrationTimeSeconds  contribution  organization
+    }]
+
+# user.ratedList ?activeOnly=(bool) &includeRetired=(bool) &contestId=(int)
+    [{
+        Same as above url
+    }]
+
+# user.rating?handle={str}
+    [{
+        contestId  contestName  handle  rank  oldRating  newRating  ratingUpdateTimeSeconds
+    }]
+
+# user.status?handle={str} &from=(int) &count=(int)
+    [{
+        Same as problemset recent status
+    }]
+

@@ -1,0 +1,154 @@
+No Official Public API
+GraphQL API is used (Developer Tools)
+
+# https://leetcode.com/graphql?query=query{}        or      POST query{}
+{
+    "data":{
+
+    }
+}
+
+# allQuestionsCount
+{
+    difficulty
+    count
+}
+
+# questionList( categorySlug:  skip:  limit:  filters: )
+{
+    total:totalNum
+    questions:data{
+        acRate
+        difficulty
+        freqBar
+        frontendQuestionId: questionFrontendId
+        isFavor
+        paidOnly: isPaidOnly
+        status
+        title
+        titleSlug
+        topicTags {
+            name
+            id
+            slug
+        }
+        hasSolution
+        hasVideoSolution
+    }
+}
+
+# matchedUser( username: )
+{
+    username
+    githubUrl
+    twitterUrl
+    linkedinUrl
+    profile{
+        realName
+        aboutMe
+        ranking
+        userAvatar
+        school
+        countryName
+        company
+        jobTitle
+        skillTags
+        websites
+    }
+    submitStats: submitStatsGlobal {
+        acSubmissionNum {
+            difficulty
+            count
+            submissions
+        }
+    }
+    languageProblemCount{
+        languageName
+        problemsSolved
+    }
+    tagProblemCounts{
+        advanced{
+            tagName
+            tagSlug
+            problemsSolved
+        }
+        intermediate{
+            tagName
+            tagSlug
+            problemsSolved
+        }
+        fundamental{
+            tagName
+            tagSlug
+            problemsSolved
+        }
+    }
+    problemsSolvedBeatsStats{
+        difficulty
+        percentage
+    }
+    activeBadge{
+        displayName
+        icon
+    }
+    badges{
+        
+    }
+}
+
+# recentAcSubmissionList( username:  limit: )
+{
+    id
+    title
+    titleSlug
+    timestamp
+}
+
+# userContestRanking( username: ) 
+{
+    attendedContestsCount
+    rating
+    globalRanking
+    totalParticipants
+    topPercentage   
+    badge{
+        name
+    } 
+}
+
+# userContestRankingHistory( username: )
+{
+    attended
+    trendDirection
+    problemsSolved
+    totalProblems
+    finishTimeInSeconds
+    rating
+    ranking
+    contest 
+    {
+        title
+        startTime
+    }
+}
+
+# userStatus 
+{
+    userId
+    isSignedIn
+    isMockUser
+    isPremium
+    isVerified
+    username
+    avatar
+    isAdmin
+    isSuperuser
+    permissions
+    isTranslator
+    activeSessionId
+    checkedInToday
+    notificationStatus {
+        lastModified
+        numUnread
+    }
+}
