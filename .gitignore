@@ -1,3 +1,4 @@
 Pipfile
 Pipfile.lock
-cpdevdsa/settings.py
+.env
+db.sqlite3
